@@ -1,0 +1,16 @@
+ssh-keygen -t rsa -f "{caminho da pasta do projeto ex: /c/users/danie/.ssh/github"} -C "{email}"
+
+#Ao iniciar o terminal
+eval "$(ssh-agent -s)"
+ssh-add {caminho da pasta (neste exemplo /c/users/danie/.ssh/github}
+
+#iniciando o git
+git init
+git config --global user.name "{nome de usuario}"
+git config --global user.email "{email}"
+git remote add origin git@github.com:{usuario git hub}/{nome do repositorio}.git
+
+#editando
+git add .  //adiciona tudo
+git commit -m "{mensagem personalizada (ex: editei)}"
+git push origin master //envia de fato para o github
